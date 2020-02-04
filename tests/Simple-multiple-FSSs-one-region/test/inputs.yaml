@@ -1,0 +1,11 @@
+# Copyright (c) 2020 Oracle and/or its affiliates,  All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https: //oss.oracle.com/licenses/upl.
+
+
+tenancy_id: env.TF_VAR_tenancy_id
+user_id: env.TF_VAR_user_id
+fingerprint: env.TF_VAR_fingerprint
+private_key_path: env.TF_VAR_private_key_path
+region: env.TF_VAR_region
+compartment_id: env.TF_VAR_compartment_id
+

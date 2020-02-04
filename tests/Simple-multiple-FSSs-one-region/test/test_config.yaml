@@ -1,0 +1,39 @@
+# Copyright (c) 2020 Oracle and/or its affiliates,  All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https: //oss.oracle.com/licenses/upl.
+
+
+version: v1
+kind: Test
+provider: oci
+OciTests:
+ 
+  #File Systems..
+  fs_1:
+    output: file_systems
+    terra_checks:
+      display_name: "fs_1"
+      state : "ACTIVE"
+  fs_2:
+    output: file_systems
+    terra_checks:
+      display_name: "fs_2"
+      state : "ACTIVE"
+  #Mount Targets..
+  mt1:
+    output: mount_targets
+    terra_checks:
+      display_name: "mt1"
+      state : "ACTIVE"
+      export_set_name: "mt1-export-set"
+      file_systems: { "fs_1": "/fs1mt1es1e1", "fs_2": "/fs2mt1es1e1" }
+      max_fs_stat_bytes: "23843202333"
+      max_fs_stat_files: "223442"
+  mt2:
+    output: mount_targets
+    terra_checks:
+      display_name: "mt2"
+      state : "ACTIVE"
+      export_set_name: "mt2-export-set"
+      file_systems: { "fs_1": "/fs1mt2es1e1", "fs_2": "/fs2mt2es1e1" }
+      max_fs_stat_bytes: "23843202333"
+      max_fs_stat_files: "223442"
